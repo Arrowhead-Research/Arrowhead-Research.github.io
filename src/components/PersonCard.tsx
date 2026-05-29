@@ -14,7 +14,7 @@ export function PersonCard({
   image = "/images/placeholder.jpg",
 }: PersonCardProps): React.ReactElement {
   return (
-    <article className="hover-lift overflow-hidden rounded-lg border border-gray-200 bg-white p-8 text-center dark:border-gray-700 dark:bg-dark-gray-light">
+    <article className="hover-lift w-full max-w-sm overflow-hidden rounded-lg border border-gray-200 bg-white p-8 text-center dark:border-gray-700 dark:bg-dark-gray-light">
       <div className="mx-auto h-40 w-40 overflow-hidden rounded-full border-4 border-jade-green/20">
         <Image
           src={image}

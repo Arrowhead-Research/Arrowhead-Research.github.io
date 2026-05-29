@@ -34,7 +34,7 @@ export function PeopleSection({
             {description}
           </p>
         </div>
-        <div className="mb-3 grid gap-8 md:grid-cols-3">
+        <div className="mb-3 flex flex-wrap justify-center gap-8">
           {members.map((member) => (
             <PersonCard
               key={member.name}

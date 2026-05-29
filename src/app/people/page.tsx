@@ -13,49 +13,58 @@ export const metadata = createPageMetadata({
 
 const LEADERSHIP_MEMBERS = [
   {
+    name: "Timothy “Tito” Torres",
+    role: "President",
+    bio: "Tito is a national security strategist and counterterrorism expert with more than 20 years across U.S. Army Special Operations, intelligence, and global diplomacy. He leads Arrowhead Research’s work connecting operators, technologists, policymakers, and investors to address complex security challenges at speed.",
+    image: "/images/people/timothy-torres.webp",
+  },
+  {
     name: "Dane Sebring",
     role: "Executive Director",
-    bio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    image: "/images/placeholder.jpg",
+    bio: "Dane is a U.S. Army Paratrooper and engineering leader with experience in IT, cyberspace operations, and applied engineering. He builds practical engineering programs that connect servicemembers with academic and industry networks through rigorous, field-based projects.",
+    image: "/images/people/dane-sebring.webp",
   },
   {
     name: "Amy Marden",
-    role: "Vice President of the Board",
-    bio: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    image: "/images/placeholder.jpg",
+    role: "Vice President",
+    bio: "Amy is a strategist and systems builder working across technology, national security, and humanitarian operations. She is the co-founder and CEO of Tenaxiom Technology and helps Arrowhead cultivate nontraditional tech talent through prototyping competitions and industry partnerships.",
+    image: "/images/people/amy-marden.webp",
+  },
+];
+
+const DIRECTORS_MEMBERS = [
+  {
+    name: "Josh Noll",
+    role: "Director of Programming",
+    bio: "Josh is a former infantryman turned systems engineer and software developer focused on Kubernetes, infrastructure automation, and secure cloud platforms. He leads Arrowhead’s programming with a builder’s mindset, helping servicemembers turn hard operational problems into practical technical projects.",
+    image: "/images/people/josh-noll.webp",
   },
   {
     name: "Travis Williams",
     role: "Director of Strategic Partnerships",
-    bio: "Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur. Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur.",
-    image: "/images/placeholder.jpg",
-  },
-  {
-    name: "Josh Noll",
-    role: "Director of Programming",
-    bio: "Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur. Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur.",
-    image: "/images/placeholder.jpg",
+    bio: "Travis is a veteran of the 75th Ranger Regiment and currently serves as an ROTC instructor at Virginia Tech. He leads strategic partnerships that connect Arrowhead Research with universities, technical innovation hubs, research organizations, and mission-aligned companies.",
+    image: "/images/people/travis-williams.webp",
   },
 ];
 
 const BOARD_MEMBERS = [
   {
-    name: "Margaret Ellison",
-    role: "Board Chair",
-    bio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute irure dolor.",
-    image: "/images/placeholder.jpg",
+    name: "Adam Caruso",
+    role: "Board Member",
+    bio: "Adam is a U.S. Army Special Forces officer who served as USSOCOM’s Technology Liaison for Boston and New England. He connects research, academia, government, and industry partners with the Special Operations Forces innovation ecosystem.",
+    image: "/images/people/adam-caruso.webp",
   },
   {
-    name: "Robert Kaminsky",
-    role: "Board Treasurer",
-    bio: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt.",
-    image: "/images/placeholder.jpg",
+    name: "Bill Wall",
+    role: "Board Member",
+    bio: "Bill is the CEO and head of Federal Sales for Accrete AI Government, bringing commercial AI innovation to public-sector missions. He previously served 22 years in the Army as a Special Forces Lieutenant Colonel and founded a JSOC computer network operations organization.",
+    image: "/images/people/bill-wall.webp",
   },
   {
-    name: "Sandra Okafor",
-    role: "Board Secretary",
-    bio: "Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur. Quis autem vel eum iure reprehenderit qui in ea voluptate.",
-    image: "/images/placeholder.jpg",
+    name: "Yeri Lopez",
+    role: "Board Member",
+    bio: "Yeri is a partner at IronGate Capital Advisors, investing in dual-purpose national security technologies. His work spans venture capital, technology transfer, national security operations, and mentorship for people transitioning from intelligence and special operations careers.",
+    image: "/images/people/yeri-lopez.webp",
   },
 ];
 
@@ -76,10 +85,16 @@ export default function PeoplePage() {
       />
 
       <PeopleSection
+        title="Directors"
+        description="Our directors lead key programs and partnerships that advance Arrowhead Research’s mission."
+        members={DIRECTORS_MEMBERS}
+        alternate
+      />
+
+      <PeopleSection
         title="Board Members"
         description="Our board provides strategic guidance and oversight to ensure Arrowhead Research fulfills its mission with integrity and impact."
         members={BOARD_MEMBERS}
-        alternate
       />
 
       {/* CTA */}
