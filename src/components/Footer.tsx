@@ -64,14 +64,6 @@ export function Footer() {
                   info@arrowheadresearch.org
                 </a>
               </li>
-              <li>
-                <Link
-                  href="/contact"
-                  className="text-sm text-gray-600 transition-colors hover:text-jade-green dark:text-gray-400 dark:hover:text-jade-green"
-                >
-                  Contact Form
-                </Link>
-              </li>
             </ul>
           </div>
         </div>
