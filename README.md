@@ -47,7 +47,7 @@ Built with Next.js (App Router), TypeScript, Tailwind CSS, and MDX.
 | ---------------------- | -------------------------------------- |
 | `npm run dev`          | Start the development server           |
 | `npm run build`        | Production build (includes type-check) |
-| `npm start`            | Serve the production build locally     |
+| `npm start`            | Serve the exported `out/` site locally |
 | `npm run lint`         | Run ESLint                             |
 | `npm run format`       | Auto-format with Prettier              |
 | `npm run format:check` | Check formatting without writing       |
@@ -78,14 +78,14 @@ website-frontend/
 
 ## Tech Stack
 
-| Technology        | Purpose                            |
-| ----------------- | ---------------------------------- |
-| Next.js 16        | Framework (App Router, SSG)        |
-| React 19          | UI library                         |
-| TypeScript        | Type safety (strict mode)          |
-| Tailwind CSS v4   | Utility-first styling              |
-| MDX (`@next/mdx`) | Blog content authoring             |
-| Vercel            | Hosting & deployment               |
+| Technology        | Purpose                     |
+| ----------------- | --------------------------- |
+| Next.js 16        | Framework (App Router, SSG) |
+| React 19          | UI library                  |
+| TypeScript        | Type safety (strict mode)   |
+| Tailwind CSS v4   | Utility-first styling       |
+| MDX (`@next/mdx`) | Blog content authoring      |
+| GitHub Pages      | Static hosting & deployment |
 
 ## Blog Posts
 
@@ -113,7 +113,7 @@ The site uses a class-based dark mode strategy. Theme preference is initialized 
 
 ## Deployment
 
-The site deploys automatically to Vercel on pushes to `main`. Pull requests generate preview deployments. All pages use static site generation — there is no server-side rendering at request time.
+The site deploys automatically to GitHub Pages on pushes to `main` via `.github/workflows/deploy.yml`. The Next.js build uses static export (`output: "export"`) and uploads the generated `out/` directory. All pages use static site generation — there is no server-side rendering at request time.
 
 ## License
 

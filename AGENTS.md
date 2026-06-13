@@ -4,13 +4,13 @@ Guidelines for AI agents working in this repository.
 
 ## Project Overview
 
-Arrowhead Research website — a Next.js (App Router) static site with TypeScript, Tailwind CSS, and MDX-powered blog. Deployed on Vercel.
+Arrowhead Research website — a Next.js (App Router) static export site with TypeScript, Tailwind CSS, and MDX-powered blog. Deployed on GitHub Pages.
 
-- **Framework:** Next.js (App Router) with static site generation (SSG)
+- **Framework:** Next.js (App Router) with static export (`output: "export"`)
 - **Language:** TypeScript (strict)
 - **Styling:** Tailwind CSS (utility classes only, no custom CSS besides `globals.css`)
 - **Content:** MDX files in `content/blog/` rendered with `@next/mdx`
-- **Hosting:** Vercel (auto-deploy from `main`, preview deploys on PRs)
+- **Hosting:** GitHub Pages (auto-deploy from `main` via `.github/workflows/deploy.yml`)
 
 ## Build / Lint / Test Commands
 
@@ -21,10 +21,10 @@ npm install
 # Development server
 npm run dev
 
-# Production build (also runs type checking)
+# Production static export (also runs type checking)
 npm run build
 
-# Start production server locally
+# Serve exported site locally after npm run build
 npm start
 
 # Linting
@@ -168,18 +168,18 @@ import type { BlogPost } from "./types";
 ## Performance
 
 - Target Lighthouse 90+ in all categories (Performance, Accessibility, Best Practices, SEO).
-- All pages use static site generation (SSG) — no server-side rendering.
+- All pages use static export — no server-side rendering, API routes, or request-time server features.
 - Use Next.js `<Image>` with proper `width`, `height`, and responsive `sizes`.
 - Minimize client-side JavaScript. Prefer Server Components; use `"use client"` only when required (interactivity, hooks, browser APIs).
 
 ## Key Dependencies
 
-| Package               | Purpose                     |
-| --------------------- | --------------------------- |
-| `next`                | Framework (App Router, SSG) |
-| `react` / `react-dom` | UI library                  |
-| `tailwindcss`         | Utility-first CSS           |
-| `@next/mdx`           | MDX rendering               |
-| `typescript`          | Type safety                 |
-| `eslint`              | Linting                     |
-| `prettier`            | Code formatting             |
+| Package               | Purpose                               |
+| --------------------- | ------------------------------------- |
+| `next`                | Framework (App Router, static export) |
+| `react` / `react-dom` | UI library                            |
+| `tailwindcss`         | Utility-first CSS                     |
+| `@next/mdx`           | MDX rendering                         |
+| `typescript`          | Type safety                           |
+| `eslint`              | Linting                               |
+| `prettier`            | Code formatting                       |
