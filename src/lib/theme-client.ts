@@ -1,16 +1,30 @@
 export type Theme = "dark" | "light";
 
-const THEME_COOKIE = "theme";
+const THEME_STORAGE_KEY = "theme";
+
+export function getStoredTheme(): Theme | null {
+  const theme = window.localStorage.getItem(THEME_STORAGE_KEY);
+  return theme === "dark" || theme === "light" ? theme : null;
+}
+
+export function getSystemTheme(): Theme {
+  return window.matchMedia("(prefers-color-scheme: dark)").matches
+    ? "dark"
+    : "light";
+}
+
+export function getResolvedTheme(): Theme {
+  return getStoredTheme() ?? getSystemTheme();
+}
+
+export function applyTheme(theme: Theme): void {
+  document.documentElement.classList.toggle("dark", theme === "dark");
+}
 
 /**
- * Set the theme cookie and update the <html> class (client-side).
+ * Store the user's explicit theme preference and update the <html> class.
  */
 export function setThemeOnClient(theme: Theme): void {
-  document.cookie = `${THEME_COOKIE}=${theme};path=/;max-age=${60 * 60 * 24 * 365};SameSite=Lax`;
-
-  if (theme === "dark") {
-    document.documentElement.classList.add("dark");
-  } else {
-    document.documentElement.classList.remove("dark");
-  }
+  window.localStorage.setItem(THEME_STORAGE_KEY, theme);
+  applyTheme(theme);
 }

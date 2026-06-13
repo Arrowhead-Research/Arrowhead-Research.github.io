@@ -26,17 +26,12 @@ Built with Next.js (App Router), TypeScript, Tailwind CSS, and MDX.
 
 3. **Set up environment variables:**
 
-   Create a `.env.local` file in the project root:
+   Create a `.env.local` file in the project root if you need optional integrations:
 
    ```env
-   # Required for the contact form to send emails (https://resend.com)
-   RESEND_API_KEY=re_your_api_key_here
-
    # Optional — Google Analytics 4 measurement ID
    NEXT_PUBLIC_GA_MEASUREMENT_ID=G-XXXXXXXXXX
    ```
-
-   The dev server will start without these, but the contact form will not deliver emails without a valid Resend key.
 
 4. **Start the development server:**
 
@@ -65,8 +60,7 @@ website-frontend/
 ├── content/blog/            # MDX blog posts (YYYY-MM-DD-slug.mdx)
 ├── public/images/           # Static assets (logos, photos)
 ├── src/
-│   ├── app/                 # Next.js App Router pages & API routes
-│   │   ├── api/contact/     # POST /api/contact (Resend)
+│   ├── app/                 # Next.js App Router pages
 │   │   ├── blog/            # Blog index & [slug] pages
 │   │   ├── contact/         # Contact page
 │   │   ├── mission/         # Mission page
@@ -91,7 +85,6 @@ website-frontend/
 | TypeScript        | Type safety (strict mode)          |
 | Tailwind CSS v4   | Utility-first styling              |
 | MDX (`@next/mdx`) | Blog content authoring             |
-| Resend            | Transactional email (contact form) |
 | Vercel            | Hosting & deployment               |
 
 ## Blog Posts
@@ -113,7 +106,7 @@ Posts are statically generated at build time and listed in reverse chronological
 
 ## Theming
 
-The site uses a class-based dark mode strategy with dark mode as the default. Theme preference is persisted via a cookie. Brand colors are defined as Tailwind theme tokens in `src/app/globals.css`:
+The site uses a class-based dark mode strategy. Theme preference is initialized from the user's system color-scheme preference and persisted client-side in `localStorage` when manually changed. Brand colors are defined as Tailwind theme tokens in `src/app/globals.css`:
 
 - **Dark Gray** (`#2d2e2d`) — primary background
 - **Jade Green** (`#2c8753`) — accent color

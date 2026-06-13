@@ -1,4 +1,3 @@
-import { ContactForm } from "@/components/ContactForm";
 import { Hero } from "@/components/Hero";
 import { createPageMetadata } from "@/lib/metadata";
 

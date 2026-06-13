@@ -4,7 +4,6 @@ import { Inter } from "next/font/google";
 import { Footer } from "@/components/Footer";
 import { GoogleAnalytics } from "@/components/GoogleAnalytics";
 import { Header } from "@/components/Header";
-import { getThemeFromCookie } from "@/lib/theme";
 
 import "./globals.css";
 
@@ -12,6 +11,26 @@ const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
 });
+
+const themeInitScript = `
+(function () {
+  try {
+    var storedTheme = window.localStorage.getItem("theme");
+    var prefersDark = window.matchMedia("(prefers-color-scheme: dark)");
+    var applyTheme = function (theme) {
+      document.documentElement.classList.toggle("dark", theme === "dark");
+    };
+
+    applyTheme(storedTheme || (prefersDark.matches ? "dark" : "light"));
+
+    prefersDark.addEventListener("change", function (event) {
+      if (!window.localStorage.getItem("theme")) {
+        applyTheme(event.matches ? "dark" : "light");
+      }
+    });
+  } catch (_) {}
+})();
+`;
 
 export const metadata: Metadata = {
   title: {
@@ -39,16 +58,15 @@ export const metadata: Metadata = {
   manifest: "/manifest.webmanifest",
 };
 
-export default async function RootLayout({
+export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const theme = await getThemeFromCookie();
-
   return (
-    <html lang="en" className={theme === "dark" ? "dark" : ""}>
+    <html lang="en" suppressHydrationWarning>
       <head>
+        <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
         <GoogleAnalytics />
       </head>
       <body

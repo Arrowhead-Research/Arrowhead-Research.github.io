@@ -9,8 +9,7 @@ Arrowhead Research website — a Next.js (App Router) static site with TypeScrip
 - **Framework:** Next.js (App Router) with static site generation (SSG)
 - **Language:** TypeScript (strict)
 - **Styling:** Tailwind CSS (utility classes only, no custom CSS besides `globals.css`)
-- **Content:** MDX files in `content/blog/` parsed with `next-mdx-remote` and `gray-matter`
-- **Email:** Resend (via Vercel API route at `/api/contact`)
+- **Content:** MDX files in `content/blog/` rendered with `@next/mdx`
 - **Hosting:** Vercel (auto-deploy from `main`, preview deploys on PRs)
 
 ## Build / Lint / Test Commands
@@ -41,7 +40,7 @@ npm test
 
 # Run a single test file
 npx jest path/to/file.test.ts
-npx jest --testPathPattern="ContactForm"
+npx jest --testPathPattern="Header"
 
 # Run tests matching a pattern
 npx jest -t "should submit form"
@@ -69,7 +68,6 @@ website-frontend/
       contact/page.tsx
       blog/page.tsx       # Blog index
       blog/[slug]/page.tsx
-      api/contact/route.ts
     components/           # Reusable React components
     lib/                  # Utility modules (mdx.ts, metadata.ts, theme.ts)
     app/globals.css       # Tailwind directives, brand tokens, base styles
@@ -94,7 +92,7 @@ website-frontend/
 | Utility/lib files   | camelCase `.ts`                        | `mdx.ts`, `metadata.ts`       |
 | Pages (App Router)  | `page.tsx` / `layout.tsx` / `route.ts` | `app/blog/page.tsx`           |
 | MDX content files   | kebab-case with date prefix            | `2026-02-22-post-slug.mdx`    |
-| Interfaces/Types    | PascalCase                             | `BlogPost`, `ContactFormData` |
+| Interfaces/Types    | PascalCase                             | `BlogPost`, `Program`         |
 | Functions/variables | camelCase                              | `getPostBySlug`, `isDarkMode` |
 | Constants           | UPPER_SNAKE_CASE                       | `MAX_POSTS_PER_PAGE`          |
 | CSS classes         | Tailwind utility classes only          | —                             |
@@ -104,7 +102,7 @@ website-frontend/
 Order imports in this sequence, separated by blank lines:
 
 1. React / Next.js built-ins (`react`, `next/*`)
-2. Third-party packages (`gray-matter`, `resend`, etc.)
+2. Third-party packages (`@next/mdx`, etc.)
 3. Internal aliases (`@/components/*`, `@/lib/*`)
 4. Relative imports (siblings, types)
 
@@ -137,7 +135,7 @@ import type { BlogPost } from "./types";
   - `--color-dark-gray: #2d2e2d` (use as `bg-dark-gray`, `text-dark-gray`, etc.)
   - `--color-jade-green: #2c8753` (use as `bg-jade-green`, `text-jade-green`, etc.)
 - Dark mode uses `@custom-variant dark` with class strategy. Apply `dark:` variant classes on all themed elements.
-- Dark mode is the default theme. Theme preference is persisted via cookie.
+- Theme initializes from `prefers-color-scheme`. Manual theme preference is persisted client-side via `localStorage`.
 - Mobile-first responsive design: use `sm:`, `md:`, `lg:` breakpoint prefixes.
 
 ### Error Handling
@@ -181,9 +179,7 @@ import type { BlogPost } from "./types";
 | `next`                | Framework (App Router, SSG) |
 | `react` / `react-dom` | UI library                  |
 | `tailwindcss`         | Utility-first CSS           |
-| `next-mdx-remote`     | MDX rendering               |
-| `gray-matter`         | Frontmatter parsing         |
-| `resend`              | Contact form email delivery |
+| `@next/mdx`           | MDX rendering               |
 | `typescript`          | Type safety                 |
 | `eslint`              | Linting                     |
 | `prettier`            | Code formatting             |
