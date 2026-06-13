@@ -159,53 +159,11 @@ export default function Home() {
             <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl dark:text-white">
               Built By Those Who Serve
             </h2>
-          </div>
-          <div className="mt-12 grid gap-8 md:grid-cols-3">
-            <div className="rounded-lg border border-gray-200 bg-white p-6 dark:border-gray-700 dark:bg-dark-gray-light">
-              <p className="text-sm leading-relaxed text-gray-600 dark:text-gray-300">
-                &ldquo;Moonshot Rodeo changed how I think about problem-solving.
-                Building a working prototype in 72 hours with my team proved we
-                could do more than anyone expected — including ourselves.&rdquo;
-              </p>
-              <div className="mt-4 border-t border-gray-100 pt-4 dark:border-gray-700">
-                <p className="text-sm font-semibold text-gray-900 dark:text-white">
-                  Active Duty Participant
-                </p>
-                <p className="text-xs text-gray-500 dark:text-gray-400">
-                  Moonshot Rodeo 2026
-                </p>
-              </div>
-            </div>
-            <div className="rounded-lg border border-gray-200 bg-white p-6 dark:border-gray-700 dark:bg-dark-gray-light">
-              <p className="text-sm leading-relaxed text-gray-600 dark:text-gray-300">
-                &ldquo;The writing program didn&apos;t just teach me to write
-                papers — it taught me to think clearly. That skill translates to
-                everything from briefing commanders to designing systems.&rdquo;
-              </p>
-              <div className="mt-4 border-t border-gray-100 pt-4 dark:border-gray-700">
-                <p className="text-sm font-semibold text-gray-900 dark:text-white">
-                  Guard/Reserve Member
-                </p>
-                <p className="text-xs text-gray-500 dark:text-gray-400">
-                  Writing & Presenting Program
-                </p>
-              </div>
-            </div>
-            <div className="rounded-lg border border-gray-200 bg-white p-6 dark:border-gray-700 dark:bg-dark-gray-light">
-              <p className="text-sm leading-relaxed text-gray-600 dark:text-gray-300">
-                &ldquo;Black Relay pushed us beyond the whiteboard. When your
-                solution has to actually work in the field, you learn what
-                engineering really means — fast.&rdquo;
-              </p>
-              <div className="mt-4 border-t border-gray-100 pt-4 dark:border-gray-700">
-                <p className="text-sm font-semibold text-gray-900 dark:text-white">
-                  Veteran Engineer
-                </p>
-                <p className="text-xs text-gray-500 dark:text-gray-400">
-                  Black Relay Competitor
-                </p>
-              </div>
-            </div>
+            <p className="mx-auto mt-4 max-w-2xl text-lg leading-8 text-gray-600 dark:text-gray-300">
+              Arrowhead Research is led by servicemembers and veterans who
+              understand the mission, the constraints, and the urgency of
+              building practical tools for national defense.
+            </p>
           </div>
         </div>
       </section>
