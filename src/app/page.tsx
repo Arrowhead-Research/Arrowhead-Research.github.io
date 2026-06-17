@@ -64,6 +64,30 @@ export default function Home() {
         videoSrc="/videos/banner_video_1.mp4"
       />
 
+      {/* Event Callout */}
+      <section className="bg-jade-green px-4 py-4 text-white">
+        <div className="mx-auto flex max-w-5xl flex-col items-start justify-between gap-4 sm:flex-row sm:items-center">
+          <div>
+            <p className="text-sm font-semibold uppercase tracking-wider text-white/80">
+              Upcoming Event
+            </p>
+            <h2 className="text-2xl font-bold tracking-tight">
+              Black Relay - <em>August 15th kickoff</em>
+            </h2>
+            <p className="mt-1 text-sm text-white/90">
+              Join Arrowhead Research for our next field-focused engineering
+              competition.
+            </p>
+          </div>
+          <a
+            href="https://arrowheadresearch.org/black-relay/"
+            className="inline-flex shrink-0 items-center rounded-md bg-white px-5 py-3 text-sm font-semibold text-jade-green transition-colors hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-jade-green"
+          >
+            Learn more
+          </a>
+        </div>
+      </section>
+
       {/* Stats Bar */}
       <section className="border-y border-gray-200 bg-white dark:border-gray-800 dark:bg-dark-gray-light">
         <div className="mx-auto grid max-w-5xl grid-cols-2 gap-4 px-4 py-8 sm:grid-cols-4 sm:gap-8 sm:py-10">
