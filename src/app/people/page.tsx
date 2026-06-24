@@ -66,6 +66,12 @@ const BOARD_MEMBERS = [
     bio: "Yeri is a partner at IronGate Capital Advisors, investing in dual-purpose national security technologies. His work spans venture capital, technology transfer, national security operations, and mentorship for people transitioning from intelligence and special operations careers.",
     image: "/images/people/yeri-lopez.webp",
   },
+  {
+    name: "Dr. Randy Roush",
+    role: "Board Member",
+    bio: "Randy is an electrical engineering PhD and IEEE Senior Member with more than 30 years of research, product development, operational deployment, and teaching experience. He has advised law enforcement, intelligence, and special operations organizations while helping transition RF, antenna, audio, video, optics, and signal-processing technologies from research labs to operational use.",
+    image: "/images/people/randy-roush.webp",
+  },
 ];
 
 export default function PeoplePage() {
